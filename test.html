@@ -41,6 +41,16 @@
     <label><input type="radio" name="q2" value="a"> A) 110 В</label><br>
     <label><input type="radio" name="q2" value="b"> B) 220 В</label><br>
     <label><input type="radio" name="q2" value="c"> C) 380 В</label><br>
+   
+    <p>3. Какого цвета нулевой провод?</p>
+    <label><input type="radio" name="q3" value="a"> A) Синий</label><br>
+    <label><input type="radio" name="q3" value="b"> B) Жёлто-зелёный</label><br>
+    <label><input type="radio" name="q3" value="c"> C) Красный</label><br>
+
+    <p>4. Какое напряжение в трёхфазной сети в Казахстане?</p>
+    <label><input type="radio" name="q4" value="a"> A) 110 В</label><br>
+    <label><input type="radio" name="q4" value="b"> B) 220 В</label><br>
+    <label><input type="radio" name="q4" value="c"> C) 380 В</label><br>
 
     <button type="button" onclick="checkAnswers()">Проверить</button>
   </form>
@@ -55,8 +65,10 @@
       let score = 0;
       if (quiz.q1.value === "b") score++;
       if (quiz.q2.value === "b") score++;
+      if (quiz.q3.value === "a") score++;
+      if (quiz.q4.value === "c") score++;
       document.getElementById("result").textContent =
-        "Вы набрали " + score + " из 2 баллов.";
+        "Вы набрали " + score + " из 4 баллов.";
     }
   </script>
 </body>
