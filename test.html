@@ -18,7 +18,17 @@
     <input type="radio" name="q2" value="a"> A) 110 В<br>
     <input type="radio" name="q2" value="b"> B) 220 В<br>
     <input type="radio" name="q2" value="c"> C) 380 В<br>
-
+    
+<p>3. Какого цвета нулевой провод?</p>
+    <input type="radio" name="q1" value="a"> A) Синий<br>
+    <input type="radio" name="q1" value="b"> B) Жёлто-зелёный<br>
+    <input type="radio" name="q1" value="c"> C) Красный<br>
+    
+    <p>4. Какого цвета фазный провод?</p>
+    <input type="radio" name="q1" value="a"> A) Синий<br>
+    <input type="radio" name="q1" value="b"> B) Жёлто-зелёный<br>
+    <input type="radio" name="q1" value="c"> C) Красный<br>
+    
     <br>
     <button type="button" onclick="checkAnswers()">Проверить</button>
   </form>
@@ -31,8 +41,10 @@
       let score = 0;
       if (quiz.q1.value === "b") score++;
       if (quiz.q2.value === "b") score++;
+      if (quiz.q3.value === "a") score++;
+      if (quiz.q4.value === "c") score++;
       document.getElementById("result").textContent =
-        "Вы набрали " + score + " из 2 баллов.";
+        "Вы набрали " + score + " из 4 баллов.";
     }
   </script>
 
