@@ -6,6 +6,7 @@ self.addEventListener("install", event => {
         "/index.html",
         "/home.html",
         "/icon.png"
+        "/test.html"
       ]);
     })
   );
