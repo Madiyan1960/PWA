@@ -2,29 +2,33 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Тест: Основы электрики</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
+      font-size: 1.2em;
+      font-family: sans-serif;
+      padding: 20px;
     }
     h1 {
-      color: #2c3e50;
+      font-size: 1.6em;
+    }
+    input[type="radio"] {
+      transform: scale(1.3);
+      margin-right: 10px;
     }
     button {
+      font-size: 1.2em;
       padding: 10px 20px;
-      font-size: 16px;
+      margin-top: 15px;
     }
     #result {
       margin-top: 20px;
       font-weight: bold;
-      color: green;
     }
   </style>
 </head>
 <body>
-
   <h1>Тест: Основы электрики</h1>
 
   <form id="quiz">
@@ -37,44 +41,23 @@
     <label><input type="radio" name="q2" value="a"> A) 110 В</label><br>
     <label><input type="radio" name="q2" value="b"> B) 220 В</label><br>
     <label><input type="radio" name="q2" value="c"> C) 380 В</label><br>
-    
-    <p>3. Какого цвета нулевой провод?</p>
-    <label><input type="radio" name="q3" value="a"> A) Синий</label><br>
-    <label><input type="radio" name="q3" value="b"> B) Жёлто-зелёный</label><br>
-    <label><input type="radio" name="q3" value="c"> C) Красный</label><br>
-    
-    <p>4. Какого цвета фазный провод?</p>
-    <label><input type="radio" name="q4" value="a"> A) Синий</label><br>
-    <label><input type="radio" name="q4" value="b"> B) Жёлто-зелёный</label><br>
-    <label><input type="radio" name="q4" value="c"> C) Красный</label><br>
-    
-   
+
     <button type="button" onclick="checkAnswers()">Проверить</button>
   </form>
 
   <p id="result"></p>
 
+  <p><a href="index.html">Вернуться на главную</a></p>
+
   <script>
     function checkAnswers() {
       const quiz = document.forms['quiz'];
       let score = 0;
-
-      if (!quiz.q1.value || !quiz.q2.value || !quiz.q3.value || !quiz.q4.value) {
-        alert("Пожалуйста, ответьте на все вопросы.");
-        return;
-      }
-
       if (quiz.q1.value === "b") score++;
       if (quiz.q2.value === "b") score++;
-      if (quiz.q3.value === "a") score++;
-      if (quiz.q4.value === "c") score++;
-
       document.getElementById("result").textContent =
-        "Вы набрали " + score + " из 4 баллов.";
+        "Вы набрали " + score + " из 2 баллов.";
     }
   </script>
-
-  <p><a href="index.html">Вернуться на главную</a></p>
-
 </body>
 </html>
