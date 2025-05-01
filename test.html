@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Тест: Основы электрики</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>Тест: Основы электрики</h1>
+
+  <form id="quiz">
+    <p>1. Какого цвета заземляющий провод?</p>
+    <input type="radio" name="q1" value="a"> A) Синий<br>
+    <input type="radio" name="q1" value="b"> B) Жёлто-зелёный<br>
+    <input type="radio" name="q1" value="c"> C) Красный<br>
+
+    <p>2. Какое стандартное напряжение в бытовой сети в Казахстане?</p>
+    <input type="radio" name="q2" value="a"> A) 110 В<br>
+    <input type="radio" name="q2" value="b"> B) 220 В<br>
+    <input type="radio" name="q2" value="c"> C) 380 В<br>
+
+    <br>
+    <button type="button" onclick="checkAnswers()">Проверить</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    function checkAnswers() {
+      const quiz = document.forms['quiz'];
+      let score = 0;
+      if (quiz.q1.value === "b") score++;
+      if (quiz.q2.value === "b") score++;
+      document.getElementById("result").textContent =
+        "Вы набрали " + score + " из 2 баллов.";
+    }
+  </script>
+
+  <p><a href="index.html">Вернуться на главную</a></p>
+</body>
+</html>
