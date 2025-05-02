@@ -82,8 +82,11 @@
 
     document.getElementById('result').textContent =
       `Вы набрали ${score} из ${questions.length} баллов.`;
-    document.getElementById('restart-btn').style.display = 'inline-block';
+    // 🔒 Отключаем кнопку "Проверить"
+  document.querySelector('button').disabled = true;
 
+  // 🔁 Показываем кнопку "Пройти снова"
+  document.getElementById('restart-btn').style.display = 'inline-block';
   }
   loadQuestions();
 </script>
