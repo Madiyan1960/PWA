@@ -32,6 +32,7 @@
   <h1>Тест: Основы электрики</h1>
   <div id="quiz-container"></div>
   <button onclick="checkAnswers()">Проверить</button>
+  <button id="restart-btn" onclick="location.reload()" style="display: none;">Пройти снова</button>
   <p id="result"></p>
   <p><a href="index.html">Вернуться на главную</a></p>
 
@@ -81,8 +82,8 @@
 
     document.getElementById('result').textContent =
       `Вы набрали ${score} из ${questions.length} баллов.`;
-    // 🔒 Отключить кнопку
-  document.querySelector('button').disabled = true;
+    document.getElementById('restart-btn').style.display = 'inline-block';
+
   }
   loadQuestions();
 </script>
