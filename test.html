@@ -52,17 +52,37 @@
       });
     }
 
-    function checkAnswers() {
-      let score = 0;
-      questions.forEach((q, i) => {
-        const selected = document.querySelector(`input[name="q${i}"]:checked`);
-        if (selected && parseInt(selected.value) === q.answer) score++;
-      });
-      document.getElementById('result').textContent =
-        `Вы набрали ${score} из ${questions.length} баллов.`;
-    }
+   <script>
+  function checkAnswers() {
+    let score = 0;
+    questions.forEach((q, i) => {
+      const selected = document.querySelector(`input[name="q${i}"]:checked`);
+      const correctIndex = q.answer;
+      const correctOption = document.querySelector(`input[name="q${i}"][value="${correctIndex}"]`);
 
-    loadQuestions();
-  </script>
-</body>
-</html>
+      if (selected) {
+        if (parseInt(selected.value) === correctIndex) {
+          score++;
+          selected.parentElement.style.color = 'green';
+        } else {
+          selected.parentElement.style.color = 'red';
+          correctOption.parentElement.style.color = 'green';
+        }
+      } else {
+        correctOption.parentElement.style.color = 'green';
+      }
+
+      const explanation = document.createElement('div');
+      explanation.style.fontStyle = 'italic';
+      explanation.style.marginBottom = '10px';
+      explanation.textContent = `Правильный ответ: ${q.options[correctIndex]}`;
+      correctOption.parentElement.parentElement.appendChild(explanation);
+    });
+
+    document.getElementById('result').textContent =
+      `Вы набрали ${score} из ${questions.length} баллов.`;
+  }
+
+  loadQuestions();
+</script>
+
