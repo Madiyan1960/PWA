@@ -44,13 +44,15 @@
       const container = document.getElementById('quiz-container');
 
       questions.forEach((q, i) => {
-        const block = document.createElement('div');
-        block.innerHTML = `<p>${i + 1}. ${q.question}</p>` +
-          q.options.map((opt, j) =>
-            `<label><input type="radio" name="q${i}" value="${j}"> ${opt}</label><br>`
-          ).join('');
-        container.appendChild(block);
-      });
+  const block = document.createElement('div');
+  block.innerHTML = `<p>${i + 1}. ${q.question}</p>` +
+    (q.image ? `<img src="${q.image}" alt="Рисунок к вопросу" style="max-width:100%; height:auto;"><br>` : '') +
+    q.options.map((opt, j) =>
+      `<label><input type="radio" name="q${i}" value="${j}"> ${opt}</label><br>`
+    ).join('');
+  container.appendChild(block);
+});
+
     }
 
   
