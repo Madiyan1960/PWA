@@ -46,16 +46,16 @@
       questions.forEach((q, i) => {
   const block = document.createElement('div');
   block.innerHTML = `<p>${i + 1}. ${q.question}</p>` +
-    (q.image ? `<img src="${q.image}" alt="Рисунок к вопросу" style="max-width:50%; height:auto;"><br>` : '') +
+    (q.image ? `<img src="${q.image}" alt="Рисунок к вопросу" style="max-width:100%; height:auto;"><br>` : '') +
+    (q.video ? `<video width="100%" controls><source src="${q.video}" type="video/mp4">Ваш браузер не поддерживает видео.</video><br>` : '') +
     q.options.map((opt, j) =>
       `<label><input type="radio" name="q${i}" value="${j}"> ${opt}</label><br>`
     ).join('');
   container.appendChild(block);
 });
-
+      
     }
-
-  
+ 
   function checkAnswers() {
     let score = 0;
     questions.forEach((q, i) => {
